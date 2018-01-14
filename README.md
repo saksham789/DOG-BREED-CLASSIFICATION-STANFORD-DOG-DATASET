@@ -1,4 +1,5 @@
 # DOG-BREED-CLASSIFICATION- STANFORD-DOG-DATASET
+![alt image](https://user-images.githubusercontent.com/26468713/34918645-fbfe6bc2-f97b-11e7-9f89-548b508db905.jpg)
 ## DATASET
 [Stanford Dog Dataset](http://vision.stanford.edu/aditya86/ImageNetDogs/) has around ~20 k images belonging to 120 classes and each image has an annotation associated with it.First Thought ,No. of images per breed availiable for training data which is roughly ~180 images, which is very less by the account of the Data required to train a Convolution Neural Net(CNN) classifier.
 Since amount of Data we have is a constraint we use the concept of **Transfer Learning** ,which being said refers to technique which allows you to use the pretrained models on your own Dataset. Here we are going to use VGG16,VGG16BN(VGG16 with Batch Normalisation) models . VGG16 is a Deep CNN trained over Imagenet Dataset which has around 1000 synsets .
@@ -25,5 +26,3 @@ After 20 epochs
 We trained our Data by cropping out the relevant part of the image using annotation file in Stanford dataset.Now while making prediction on a Random Image we can make useOf [Object Detection Algorithms like YOLO](https://pjreddie.com/darknet/yolo/) to locate the Bounding Box of a Dog in picture and then feed the cropped image to your model.
 To Test the Accuracy Of Yolo ,we can make use of Annotaions in the Dataset images and Bounding Boxes  obtained by the YOLO algorithm.
 **Accuracy Metric:INTERSECTION OVER UNION OF THE TWO BOXES**
-## ERROR ANAlYSIS
-Aah!! Let’s see where our model is getting wrong . We can do this by generating a Plotting a [https://github.com/saksham789/DOG-BREED-CLASSIFICATION-STANFORD-DOG-DATASET/blob/master/Images/cof2.png] like this:
