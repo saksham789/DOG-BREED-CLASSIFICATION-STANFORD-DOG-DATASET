@@ -26,3 +26,22 @@ After 20 epochs
 We trained our Data by cropping out the relevant part of the image using annotation file in Stanford dataset.Now while making prediction on a Random Image we can make useOf [Object Detection Algorithms like YOLO](https://pjreddie.com/darknet/yolo/) to locate the Bounding Box of a Dog in picture and then feed the cropped image to your model.
 To Test the Accuracy Of Yolo ,we can make use of Annotaions in the Dataset images and Bounding Boxes  obtained by the YOLO algorithm.
 **Accuracy Metric:INTERSECTION OVER UNION OF THE TWO BOXES**
+## ERROR ANAlYSIS
+Aah!! Let’s see where our model is getting wrong . We can do this by generating a Plotting a Confusion matrix like this:
+![alt text](https://user-images.githubusercontent.com/26468713/34918643-fb86fa7e-f97b-11e7-88a7-7313bec9dd7d.png)
+
+This doesn’t Look very clear so it’s very difficult to Visualise anything .Let’s see the top 30 misclassified pair of breeds.
+
+
+![alt text](https://user-images.githubusercontent.com/26468713/34918644-fbc4d81c-f97b-11e7-98f8-dceac3203469.png)
+
+As it can be seen, the pair ‘Silky Terrier / Yorkshire Terrier’ is the absolute leader in terms of misclassification which does make sense if we look into how these two breeds of dogs look like:
+
+
+![alt text](https://user-images.githubusercontent.com/26468713/34918646-fc36fa14-f97b-11e7-9556-ecb2efda124e.png)
+
+![alt text](https://user-images.githubusercontent.com/26468713/34918647-fc707096-f97b-11e7-961c-0ebddd2b6e4f.png)
+
+This looks like the Optimal Bayes error rate which is Human in this case is itself very low because even humans confuse in this.For more details see this [article](https://www.cuteness.com/article/difference-between-yorkie-silky-terrier)
+## Conclusion
+We see how can achieve a train a Decent model with even modicum data with the Help of Transfer learning.
